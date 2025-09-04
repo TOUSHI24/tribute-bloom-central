@@ -61,6 +61,28 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Theme-specific colors
+				birthday: {
+					primary: 'hsl(var(--birthday-primary))',
+					secondary: 'hsl(var(--birthday-secondary))',
+					accent: 'hsl(var(--birthday-accent))',
+					background: 'hsl(var(--birthday-background))',
+					text: 'hsl(var(--birthday-text))'
+				},
+				anniversary: {
+					primary: 'hsl(var(--anniversary-primary))',
+					secondary: 'hsl(var(--anniversary-secondary))',
+					accent: 'hsl(var(--anniversary-accent))',
+					background: 'hsl(var(--anniversary-background))',
+					text: 'hsl(var(--anniversary-text))'
+				},
+				tribute: {
+					primary: 'hsl(var(--tribute-primary))',
+					secondary: 'hsl(var(--tribute-secondary))',
+					accent: 'hsl(var(--tribute-accent))',
+					background: 'hsl(var(--tribute-background))',
+					text: 'hsl(var(--tribute-text))'
 				}
 			},
 			borderRadius: {

@@ -2,41 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* WishApp Design System - Celebration & Memorial Themes */
 
 @layer base {
   :root {
+    /* Birthday Theme - Bright & Celebratory */
+    --birthday-primary: 340 100% 65%;
+    --birthday-secondary: 320 100% 70%;
+    --birthday-accent: 350 100% 85%;
+    --birthday-background: 340 50% 97%;
+    --birthday-text: 340 100% 15%;
+    --birthday-gradient: linear-gradient(135deg, hsl(340 100% 65%), hsl(320 100% 70%), hsl(300 100% 75%));
+    
+    /* Anniversary Theme - Romantic & Warm */
+    --anniversary-primary: 0 100% 60%;
+    --anniversary-secondary: 15 100% 65%;
+    --anniversary-accent: 330 100% 85%;
+    --anniversary-background: 0 50% 97%;
+    --anniversary-text: 0 100% 20%;
+    --anniversary-gradient: linear-gradient(135deg, hsl(0 100% 60%), hsl(15 100% 65%), hsl(330 100% 70%));
+    
+    /* Death Tribute Theme - Dark & Respectful */
+    --tribute-primary: 240 10% 20%;
+    --tribute-secondary: 240 5% 30%;
+    --tribute-accent: 240 20% 60%;
+    --tribute-background: 240 10% 10%;
+    --tribute-text: 0 0% 90%;
+    --tribute-gradient: linear-gradient(135deg, hsl(240 10% 15%), hsl(240 5% 20%), hsl(240 8% 25%));
+    
+    /* Shared Design Tokens */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
+    --primary: 340 100% 65%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --ring: 340 100% 65%;
+    --radius: 1rem;
+    
+    /* Animation & Effects */
+    --shadow-celebration: 0 20px 40px hsl(340 100% 65% / 0.3);
+    --shadow-romantic: 0 20px 40px hsl(0 100% 60% / 0.3);
+    --shadow-memorial: 0 20px 40px hsl(240 10% 20% / 0.5);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -94,6 +115,76 @@ All colors MUST be HSL.
   }
 }
 
+/* Theme Classes */
+.birthday-theme {
+  background: hsl(var(--birthday-background));
+  background-image: var(--birthday-gradient);
+  color: hsl(var(--birthday-text));
+}
+
+.anniversary-theme {
+  background: hsl(var(--anniversary-background));
+  background-image: var(--anniversary-gradient);
+  color: hsl(var(--anniversary-text));
+}
+
+.tribute-theme {
+  background: hsl(var(--tribute-background));
+  background-image: var(--tribute-gradient);
+  color: hsl(var(--tribute-text));
+}
+
+/* Emoji Rain Animation */
+@keyframes float-down {
+  0% {
+    opacity: 1;
+    transform: translateY(-100vh) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+.emoji-rain {
+  position: fixed;
+  top: -50px;
+  animation: float-down linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Celebration Effects */
+@keyframes pulse-celebration {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.pulse-celebrate {
+  animation: pulse-celebration 2s ease-in-out infinite;
+}
+
+/* Component Animations */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -101,5 +192,14 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+
+  /* Mobile optimizations */
+  html {
+    height: 100%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
   }
 }
