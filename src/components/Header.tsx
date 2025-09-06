@@ -21,24 +21,24 @@ const Header = ({ currentType, onShowHistory }: HeaderProps) => {
           title: 'Birthday Wishes',
           subtitle: 'Spread joy and celebrate special moments',
           icon: '🎂',
-          brandClass: 'bg-birthday-primary/30 border-birthday-accent/40 text-birthday-text shadow-lg shadow-birthday-primary/20',
-          titleClass: 'text-birthday-text drop-shadow-lg sparkle-animation',
+          brandClass: 'bg-birthday-primary/30 border-birthday-accent/40 text-birthday-text shadow-lg shadow-birthday-primary/15',
+          titleClass: 'text-birthday-text drop-shadow-sm',
         };
       case 'anniversary':
         return {
           title: 'Anniversary Wishes',
           subtitle: 'Celebrate love and beautiful journeys',
           icon: '💕',
-          brandClass: 'bg-anniversary-primary/30 border-anniversary-accent/40 text-anniversary-text shadow-lg shadow-anniversary-primary/20',
-          titleClass: 'text-anniversary-text drop-shadow-lg sparkle-animation',
+          brandClass: 'bg-anniversary-primary/30 border-anniversary-accent/40 text-anniversary-text shadow-lg shadow-anniversary-primary/15',
+          titleClass: 'text-anniversary-text drop-shadow-sm',
         };
       case 'tribute':
         return {
           title: 'Memorial Tribute',
           subtitle: 'Honor memories with heartfelt messages',
           icon: '🕯️',
-          brandClass: 'bg-tribute-accent/30 border-tribute-accent/40 text-tribute-text shadow-lg shadow-tribute-accent/20',
-          titleClass: 'text-tribute-text drop-shadow-lg',
+          brandClass: 'bg-tribute-accent/30 border-tribute-accent/40 text-tribute-text shadow-lg shadow-tribute-accent/15',
+          titleClass: 'text-tribute-text drop-shadow-sm',
         };
     }
   };

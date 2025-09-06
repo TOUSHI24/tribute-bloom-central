@@ -6,13 +6,13 @@
 
 @layer base {
   :root {
-    /* Birthday Theme - Vibrant Pink & Gold */
-    --birthday-primary: 330 100% 60%;
-    --birthday-secondary: 315 100% 65%;
-    --birthday-accent: 45 100% 70%;
-    --birthday-background: 330 30% 8%;
-    --birthday-text: 330 100% 95%;
-    --birthday-gradient: linear-gradient(135deg, hsl(330 100% 25%) 0%, hsl(315 100% 35%) 25%, hsl(300 100% 45%) 50%, hsl(285 100% 55%) 75%, hsl(45 100% 65%) 100%);
+    /* Birthday Theme - Pure Red */
+    --birthday-primary: 0 100% 55%;
+    --birthday-secondary: 10 100% 60%;
+    --birthday-accent: 350 100% 70%;
+    --birthday-background: 0 30% 8%;
+    --birthday-text: 0 100% 95%;
+    --birthday-gradient: linear-gradient(135deg, hsl(0 80% 20%) 0%, hsl(10 85% 30%) 25%, hsl(350 90% 40%) 50%, hsl(340 95% 50%) 75%, hsl(0 100% 60%) 100%);
     
     /* Anniversary Theme - Deep Romantic Red */
     --anniversary-primary: 0 85% 55%;
@@ -22,13 +22,13 @@
     --anniversary-text: 0 100% 95%;
     --anniversary-gradient: linear-gradient(135deg, hsl(0 70% 20%) 0%, hsl(15 80% 30%) 25%, hsl(340 90% 40%) 50%, hsl(325 100% 50%) 75%, hsl(310 100% 60%) 100%);
     
-    /* Death Tribute Theme - Dark & Respectful */
-    --tribute-primary: 240 10% 20%;
-    --tribute-secondary: 240 5% 30%;
-    --tribute-accent: 240 20% 60%;
-    --tribute-background: 240 10% 10%;
-    --tribute-text: 0 0% 90%;
-    --tribute-gradient: linear-gradient(135deg, hsl(240 10% 15%), hsl(240 5% 20%), hsl(240 8% 25%));
+    /* Death Tribute Theme - Vibrant Dark Black */
+    --tribute-primary: 0 0% 5%;
+    --tribute-secondary: 240 15% 15%;
+    --tribute-accent: 200 60% 70%;
+    --tribute-background: 0 0% 2%;
+    --tribute-text: 0 0% 95%;
+    --tribute-gradient: linear-gradient(135deg, hsl(0 0% 2%) 0%, hsl(240 20% 8%) 25%, hsl(220 30% 12%) 50%, hsl(200 40% 15%) 75%, hsl(180 50% 18%) 100%);
     
     /* Shared Design Tokens */
     --background: 0 0% 100%;
@@ -167,12 +167,12 @@
 
 @keyframes glow-pulse {
   0%, 100% { 
-    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor;
+    box-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
     filter: brightness(1);
   }
   50% { 
-    box-shadow: 0 0 30px currentColor, 0 0 60px currentColor, 0 0 90px currentColor;
-    filter: brightness(1.2);
+    box-shadow: 0 0 15px currentColor, 0 0 30px currentColor, 0 0 45px currentColor;
+    filter: brightness(1.1);
   }
 }
 
