@@ -6,21 +6,21 @@
 
 @layer base {
   :root {
-    /* Birthday Theme - Bright & Celebratory */
-    --birthday-primary: 340 100% 65%;
-    --birthday-secondary: 320 100% 70%;
-    --birthday-accent: 350 100% 85%;
-    --birthday-background: 340 50% 97%;
-    --birthday-text: 340 100% 15%;
-    --birthday-gradient: linear-gradient(135deg, hsl(340 100% 65%), hsl(320 100% 70%), hsl(300 100% 75%));
+    /* Birthday Theme - Vibrant Pink & Gold */
+    --birthday-primary: 330 100% 60%;
+    --birthday-secondary: 315 100% 65%;
+    --birthday-accent: 45 100% 70%;
+    --birthday-background: 330 30% 8%;
+    --birthday-text: 330 100% 95%;
+    --birthday-gradient: linear-gradient(135deg, hsl(330 100% 25%) 0%, hsl(315 100% 35%) 25%, hsl(300 100% 45%) 50%, hsl(285 100% 55%) 75%, hsl(45 100% 65%) 100%);
     
-    /* Anniversary Theme - Romantic & Warm */
-    --anniversary-primary: 0 100% 60%;
-    --anniversary-secondary: 15 100% 65%;
-    --anniversary-accent: 330 100% 85%;
-    --anniversary-background: 0 50% 97%;
-    --anniversary-text: 0 100% 20%;
-    --anniversary-gradient: linear-gradient(135deg, hsl(0 100% 60%), hsl(15 100% 65%), hsl(330 100% 70%));
+    /* Anniversary Theme - Deep Romantic Red */
+    --anniversary-primary: 0 85% 55%;
+    --anniversary-secondary: 15 90% 60%;
+    --anniversary-accent: 350 100% 75%;
+    --anniversary-background: 0 40% 8%;
+    --anniversary-text: 0 100% 95%;
+    --anniversary-gradient: linear-gradient(135deg, hsl(0 70% 20%) 0%, hsl(15 80% 30%) 25%, hsl(340 90% 40%) 50%, hsl(325 100% 50%) 75%, hsl(310 100% 60%) 100%);
     
     /* Death Tribute Theme - Dark & Respectful */
     --tribute-primary: 240 10% 20%;
@@ -165,8 +165,55 @@
   100% { transform: translateX(100%); }
 }
 
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor;
+    filter: brightness(1);
+  }
+  50% { 
+    box-shadow: 0 0 30px currentColor, 0 0 60px currentColor, 0 0 90px currentColor;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes sparkle-rotate {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(90deg) scale(1.1); }
+  50% { transform: rotate(180deg) scale(1); }
+  75% { transform: rotate(270deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .pulse-celebrate {
   animation: pulse-celebration 2s ease-in-out infinite;
+}
+
+.glow-effect {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.float-gentle {
+  animation: float-gentle 3s ease-in-out infinite;
+}
+
+.sparkle-animation {
+  animation: sparkle-rotate 4s linear infinite;
+}
+
+.gradient-animated {
+  background-size: 200% 200%;
+  animation: gradient-shift 5s ease infinite;
 }
 
 /* Component Animations */

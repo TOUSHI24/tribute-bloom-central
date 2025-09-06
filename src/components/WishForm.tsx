@@ -110,10 +110,10 @@ const WishForm = ({ type, onSendWish }: WishFormProps) => {
 
   return (
     <div className="max-w-md mx-auto p-4 animate-slide-up">
-      <Card className={`${config.cardClass} backdrop-blur-sm border-2`}>
+      <Card className={`${config.cardClass} backdrop-blur-sm border-2 glow-effect gradient-animated`}>
         <CardHeader className="text-center pb-4">
-          <CardTitle className="flex items-center justify-center gap-3 text-2xl font-bold">
-            {config.icon}
+          <CardTitle className="flex items-center justify-center gap-3 text-2xl font-bold float-gentle">
+            <span className="sparkle-animation">{config.icon}</span>
             {config.title}
           </CardTitle>
         </CardHeader>
@@ -125,7 +125,7 @@ const WishForm = ({ type, onSendWish }: WishFormProps) => {
                 placeholder="Enter name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="text-lg py-3 bg-white/50 backdrop-blur border-2 focus:border-current"
+                className="text-lg py-3 bg-white/50 backdrop-blur border-2 focus:border-current glow-effect transition-all duration-300"
                 required
               />
             </div>
@@ -136,7 +136,7 @@ const WishForm = ({ type, onSendWish }: WishFormProps) => {
                 placeholder="Phone number (with country code)"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="text-lg py-3 bg-white/50 backdrop-blur border-2 focus:border-current"
+                className="text-lg py-3 bg-white/50 backdrop-blur border-2 focus:border-current glow-effect transition-all duration-300"
                 required
               />
             </div>
@@ -146,24 +146,24 @@ const WishForm = ({ type, onSendWish }: WishFormProps) => {
                 placeholder={config.placeholder}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="min-h-[120px] text-lg bg-white/50 backdrop-blur border-2 focus:border-current resize-none"
+                className="min-h-[120px] text-lg bg-white/50 backdrop-blur border-2 focus:border-current resize-none glow-effect transition-all duration-300"
                 required
               />
             </div>
             
             <Button
               type="submit"
-              className={`w-full py-4 text-lg font-semibold ${config.buttonClass}`}
+              className={`w-full py-4 text-lg font-semibold pulse-celebrate ${config.buttonClass}`}
               disabled={isLoading}
             >
               {isLoading ? (
                 <div className="flex items-center gap-2">
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-current"></div>
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-current sparkle-animation"></div>
                   Sending...
                 </div>
               ) : (
                 <div className="flex items-center gap-2">
-                  <Send className="w-5 h-5" />
+                  <Send className="w-5 h-5 sparkle-animation" />
                   {config.buttonText}
                 </div>
               )}
