@@ -79,8 +79,22 @@ const WishForm = ({ type, onSendWish }: WishFormProps) => {
     setIsLoading(true);
     
     try {
-      // Simulate API call to Twilio
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Send POST request to Supabase Edge Function
+      const response = await fetch('https://iynrjbeomidlihnxmhtm.functions.supabase.co/send-whatsapp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          phone: formData.phone,
+          message: formData.message,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to send message');
+      }
       
       const wishData: WishData = {
         ...formData,
@@ -100,7 +114,7 @@ const WishForm = ({ type, onSendWish }: WishFormProps) => {
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again.",
+        description: `Error: ${error instanceof Error ? error.message : 'Failed to send message. Please try again.'}`,
         variant: "destructive",
       });
     } finally {
